@@ -1,9 +1,4 @@
-name: Git Fetch
-description: perform a git fetch on the checkout directory
+name: Git Fetch Unshallow
+description: perform a git fetch unshallow on the checkout directory
 author: terence@brex.com
 requirements: ['git']
-configuration:
-  properties:
-    depth:
-      type: number
-  additionalProperties: false

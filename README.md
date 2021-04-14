@@ -1,1 +1,1 @@
-# git-fetch-buildkite-plugin
+# git-fetch-unshallow-buildkite-plugin
