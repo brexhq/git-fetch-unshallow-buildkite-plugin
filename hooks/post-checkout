@@ -4,7 +4,4 @@ set -euo pipefail
 
 cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
 pwd
-ls
-ls .git/
-cat .git/config
 git fetch --unshallow || true
