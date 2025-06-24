@@ -4,12 +4,12 @@ A Buildkite plugin that performs a git fetch to make a shallow clone deeper.
 
 ## Usage
 
-Add the following to your `pipeline.yml`:
+Add the following to your pipeline:
 
 ```yml
 steps:
   - plugins:
-      - brexhq/git-fetch-unshallow#v1.0.0: {}
+      - github.com/brexhq/git-fetch-unshallow-buildkite-plugin#v0.0.5
 ```
 
 ## Configuration
@@ -20,10 +20,10 @@ Set this environment variable to specify the maximum commit depth for git fetch:
 
 ```yml
 steps:
-  - env:
-      GIT_FETCH_COMMIT_DEPTH: "100"
-    plugins:
-      - brexhq/git-fetch-unshallow#v1.0.0: {}
+  - plugins:
+      - github.com/brexhq/git-fetch-unshallow-buildkite-plugin#v0.0.5:
+          env:
+            GIT_FETCH_COMMIT_DEPTH: 1000
 ```
 
 If not specified, the plugin will perform a `git fetch --unshallow` operation to fetch all commits.
