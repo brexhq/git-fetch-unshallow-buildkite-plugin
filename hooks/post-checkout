@@ -4,4 +4,9 @@ set -euo pipefail
 
 cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
 pwd
-git fetch --unshallow || git fetch || true
+
+if [ -n "${GIT_FETCH_COMMIT_DEPTH:-}" ]; then
+  git fetch --depth="${GIT_FETCH_COMMIT_DEPTH}" || git fetch || true
+else
+  git fetch --unshallow || git fetch || true
+fi
